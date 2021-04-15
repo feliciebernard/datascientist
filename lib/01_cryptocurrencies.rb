@@ -10,27 +10,43 @@ end
 
 #La ou les crypto qui ont la plus grosse valeur.
 def max_value(crypto)
+  puts "Voici la crypto ayant la plus grosse valeur :"
   puts crypto.max_by(&:last).last
   puts crypto.max_by(&:last).first
+  puts gets.chomp
 end
 
 #La ou les crypto qui ont la plus petite valeur.
 def min_value(crypto)
+  puts "Voici la crypto ayant la plus petite valeur (pour ta culture G, un sprouts c'est un choux, en fait !) :"
   puts crypto.min_by(&:last).last
   puts crypto.min_by(&:last).first
+  puts gets.chomp
 end
 
 #Les devises dont le cours est inférieur à 6000
 def inf_six_mille(crypto)
-  puts six_mille = crypto.count {|a| a.index < 6000}
+  puts six_mille = crypto.select {|a, b| b < 6000}
+  puts "C'était les devises dont le cours est inférieur à 6000 hehe (ça aurait été plus sympa d'afficher les valeurs supérieures à 6000, mais bon les consignes sont les consignes !)"
+  puts gets.chomp
 end
 
+#La devise la plus chère parmi celles dont le cours est inférieur à 6000.
+def sup_inf_six_mille(crypto)
+  sup_six_mille = crypto.select {|a, b| b < 6000}
+  puts "Voici la devis la plus chère dont le cours est inférieur à 6000"
+  puts sup_six_mille.max_by(&:last).last
+  puts sup_six_mille.max_by(&:last).first
+  puts "
+  Quel nom mystérieux... 😍"
+end
 
 def perform
 crypto = arrays
 max_value(crypto)
 min_value(crypto)
 inf_six_mille(crypto)
+sup_inf_six_mille(crypto)
 end
 
 perform

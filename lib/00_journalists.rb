@@ -35,7 +35,7 @@ end
 
 #Trie la liste de handle par ordre alphabétique.
 def alphabetique_order(journalists)
-  alphabetique = journalists.sort! {|a, b| a <=> b}
+  alphabetique = journalists.sort_by(&:downcase)
   puts alphabetique
   puts "(C'était la liste de handle rangée par ordre alphabétique :D)"
   puts gets.chomp
