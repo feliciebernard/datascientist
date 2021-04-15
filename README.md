@@ -1,5 +1,1 @@
-# datascientist
-├── lib
-│   ├── 00_journalists.rb
-│   └── 01_cryptocurrencies.rb
-└── README.md
+Fait en collaboration avec Gurvan Buanic, Alexandre Martin, Jean-Baptiste Orlicki, Sidney Audibert, Loïck Jouan et Félicie Bernard.
